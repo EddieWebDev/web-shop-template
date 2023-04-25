@@ -1,0 +1,36 @@
+{
+  "name": "eddiewebdevportfolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "postinstall": "npm run build",
+    "serve-heroku": "vite --host 0.0.0.0 --port $PORT preview"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "@vitejs/plugin-react": "^3.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.43.9",
+    "vite": "^4.2.0",
+    "tailwindcss": "^3.3.1",
+    "postcss": "^8.4.21",
+    "prettier-plugin-tailwindcss": "^0.2.7",
+    "autoprefixer": "^10.4.14"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "dotenv": "^16.0.3",
+    "typescript": "^4.9.3"
+  },
+  "main": "postcss.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
