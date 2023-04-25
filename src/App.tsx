@@ -1,25 +1,23 @@
-import { Contact } from "./components/contact";
-import { Footer } from "./components/footer";
-import { Header } from "./components/header";
-import { Hero } from "./components/hero";
-import { MainContent } from "./components/main-content";
-import { About } from "./components/about";
+import { Footer } from "Components/footer";
+import { Header } from "Components/header";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from "Pages/home";
+import { Rings } from "Pages/rings";
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-black dark:text-white">
-      <Header />
-      <main className="mx-auto max-w-4xl">
-        <Hero />
-        <hr className="mx-auto w-1/2 bg-black dark:bg-white" />
-        <MainContent/>
-        <hr className="mx-auto w-1/2 bg-black dark:bg-white" />
-        <About/>
-        <hr className="mx-auto w-1/2 bg-black dark:bg-white" />
-        <Contact/>
-      </main>
-      <Footer/>
-    </div>
+    <BrowserRouter>
+      <div className="min-h-screen bg-slate-50 dark:bg-black dark:text-white">
+        <Header />
+        <main className="mx-auto max-w-4xl">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/rings" element={<Rings />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

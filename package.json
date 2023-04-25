@@ -13,16 +13,19 @@
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "prettier-plugin-tailwindcss": "^0.2.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
-    "vite": "^4.2.0",
+    "react-icons": "^4.8.0",
+    "react-router-dom": "^6.10.0",
     "tailwindcss": "^3.3.1",
-    "postcss": "^8.4.21",
-    "prettier-plugin-tailwindcss": "^0.2.7",
-    "autoprefixer": "^10.4.14"
+    "vite": "^4.2.0"
   },
   "devDependencies": {
+    "@types/node": "^18.15.11",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "dotenv": "^16.0.3",
