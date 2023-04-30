@@ -26,10 +26,12 @@ export const Header = () => {
             </Link>
           </nav>
         </div>
-        <div className="flex w-3/5 justify-center md:w-2/4">
-          <h1 className="text-2xl font-medium md:text-4xl">
-            <Link to="/">Eddies web shop</Link>
+        <div className="flex flex-col items-center w-3/5 justify-center md:w-2/4">
+          
+          <h1 className="text-2xl font-medium md:text-5xl">
+            <Link to="/">La Comtesse Atelier</Link>
           </h1>
+          <p className="text-xl">Historical Jewellery</p>
         </div>
         <div className="hidden w-1/4 md:block">
           <nav className="flex items-center justify-center gap-2 text-2xl md:gap-4">

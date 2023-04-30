@@ -6,11 +6,11 @@ import { Contact } from "Components/contact";
 export const Home = () => {
   return (
     <>
-      <Hero />
-      <hr className="mx-auto w-1/2 bg-black dark:bg-white" />
       <MainContent />
       <hr className="mx-auto w-1/2 bg-black dark:bg-white" />
       <About />
+      <hr className="mx-auto w-1/2 bg-black dark:bg-white" />
+      <Hero />
       <hr className="mx-auto w-1/2 bg-black dark:bg-white" />
       <Contact />
     </>

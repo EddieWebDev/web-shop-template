@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <div className="min-h-screen bg-slate-50 dark:bg-black dark:text-white">
         <Header />
-        <main className="mx-auto max-w-4xl">
+        <main className="mx-auto max-w-8xl">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/rings" element={<Rings />} />
