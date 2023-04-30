@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { HiOutlineShoppingBag, HiOutlineHeart } from "react-icons/hi";
 import { RxPerson } from "react-icons/rx";
+import { categories } from "../utils/dummydata";
 
 export const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -10,11 +11,11 @@ export const Header = () => {
     <header className="sticky top-0 z-10 bg-primary text-white">
       <section className="mx-auto flex h-20 items-center justify-between p-2 md:p-4">
         <div className="hidden w-1/4 items-center justify-center gap-4 md:flex">
-          <Link to="/rings">Contact</Link>
-          <Link to="/rings">About</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/about">About</Link>
         </div>
-        <div className="w-1/5 md:hidden">
-          <nav className="text-md flex items-center justify-center gap-2 md:gap-4">
+        <div className="flex w-1/6 flex-col md:hidden">
+          <nav className="text-md flex items-center justify-center gap-1 md:gap-4">
             <Link to="/rings">
               <RxPerson />
             </Link>
@@ -26,12 +27,10 @@ export const Header = () => {
             </Link>
           </nav>
         </div>
-        <div className="flex flex-col items-center w-3/5 justify-center md:w-2/4">
-          
-          <h1 className="text-2xl font-medium md:text-5xl">
+        <div className="flex w-4/6 flex-col items-center justify-center md:w-2/4">
+          <h1 className="text-2xl font-medium md:text-4xl lg:text-5xl">
             <Link to="/">La Comtesse Atelier</Link>
           </h1>
-          <p className="text-xl">Historical Jewellery</p>
         </div>
         <div className="hidden w-1/4 md:block">
           <nav className="flex items-center justify-center gap-2 text-2xl md:gap-4">
@@ -46,7 +45,7 @@ export const Header = () => {
             </Link>
           </nav>
         </div>
-        <div className="flex w-1/5 items-center justify-center md:hidden">
+        <div className="flex w-1/6 items-center justify-center md:hidden">
           <button
             id="hamburger-button"
             className={`relative h-8 w-8 cursor-pointer text-3xl md:hidden ${
@@ -66,13 +65,9 @@ export const Header = () => {
           className="text xl hidden space-x-8 md:block"
           aria-label="categories"
         >
-          <Link to="/rings">Rings</Link>
-          <Link to="/rings">Engagement</Link>
-          <Link to="/rings">Earrings</Link>
-          <Link to="/rings">Bracelets</Link>
-          <Link to="/rings">Necklaces</Link>
-          <Link to="/rings">Jewllery</Link>
-          <Link to="/rings">Inspiration</Link>
+          {categories.map((category) => (
+            <Link to={`/${category.name}`}>{category.name}</Link>
+          ))}
         </nav>
       </section>
       {showMenu && (
@@ -88,48 +83,14 @@ export const Header = () => {
             <Link className="w-full py-6 text-center hover:opacity-90" to="/">
               Home
             </Link>
-            <Link
-              className="w-full py-6 text-center hover:opacity-90"
-              to="/rings"
-            >
-              Rings
-            </Link>
-            <Link
-              className="w-full py-6 text-center hover:opacity-90"
-              to="/rings"
-            >
-              Engagement
-            </Link>
-            <Link
-              className="w-full py-6 text-center hover:opacity-90"
-              to="/rings"
-            >
-              Earrings
-            </Link>
-            <Link
-              className="w-full py-6 text-center hover:opacity-90"
-              to="/rings"
-            >
-              Bracelets
-            </Link>
-            <Link
-              className="w-full py-6 text-center hover:opacity-90"
-              to="/rings"
-            >
-              Necklaces
-            </Link>
-            <Link
-              className="w-full py-6 text-center hover:opacity-90"
-              to="/rings"
-            >
-              Jewllery
-            </Link>
-            <Link
-              className="w-full py-6 text-center hover:opacity-90"
-              to="/rings"
-            >
-              Inspiration
-            </Link>
+            {categories.map((category) => (
+              <Link
+                className="w-full py-6 text-center hover:opacity-90"
+                to={`/${category.name}`}
+              >
+                {category.name}
+              </Link>
+            ))}
           </nav>
         </section>
       )}

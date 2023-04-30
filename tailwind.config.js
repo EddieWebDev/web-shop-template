@@ -6,7 +6,7 @@ export default {
       colors: {
         primary: "#c06c84",
         secondary: "#cf90a2",
-        tertiary: "#173042"
+        tertiary: "#eea1cd",
       },
       screens: {
         widescreen: { raw: "(min-aspect-ratio: 3/2)" },
