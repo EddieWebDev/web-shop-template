@@ -10,41 +10,96 @@ export const Header = () => {
   return (
     <header className="sticky top-0 z-10 bg-primary text-white">
       <section className="mx-auto flex h-20 items-center justify-between p-2 md:p-4">
-        <div className="hidden w-1/4 items-center justify-center gap-4 md:flex">
-          <Link to="/contact">Contact</Link>
-          <Link to="/about">About</Link>
+        <div className="hidden w-1/4 items-center justify-center gap-4 md:flex lg:text-xl">
+          <Link
+            onClick={() => {
+              window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+            }}
+            to="/contact"
+          >
+            Contact
+          </Link>
+          <Link
+            onClick={() => {
+              window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+            }}
+            to="/about"
+          >
+            About
+          </Link>
         </div>
+
         <div className="flex w-1/6 flex-col md:hidden">
-          <nav className="text-md flex items-center justify-center gap-1 md:gap-4">
-            <Link to="/rings">
+          <nav className="flex items-center justify-center gap-1 md:gap-4">
+            <Link
+              onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              }}
+              to="/"
+            >
               <RxPerson />
             </Link>
-            <Link to="/rings">
+            <Link
+              onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              }}
+              to="/"
+            >
               <HiOutlineShoppingBag />
             </Link>
-            <Link to="/rings">
+            <Link
+              onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              }}
+              to="/"
+            >
               <HiOutlineHeart />
             </Link>
           </nav>
         </div>
+
         <div className="flex w-4/6 flex-col items-center justify-center md:w-2/4">
-          <h1 className="text-2xl font-medium md:text-4xl lg:text-5xl">
-            <Link to="/">La Comtesse Atelier</Link>
+          <h1 className="font-serif text-2xl font-medium md:text-4xl lg:text-5xl">
+            <Link
+              onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              }}
+              to="/"
+            >
+              La Comtesse Atelier
+            </Link>
           </h1>
         </div>
+
         <div className="hidden w-1/4 md:block">
           <nav className="flex items-center justify-center gap-2 text-2xl md:gap-4">
-            <Link to="/rings">
+            <Link
+              onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              }}
+              to="/"
+            >
               <RxPerson />
             </Link>
-            <Link to="/rings">
+            <Link
+              onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              }}
+              to="/"
+            >
               <HiOutlineShoppingBag />
             </Link>
-            <Link to="/rings">
+            <Link
+              onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              }}
+              to="/"
+            >
               <HiOutlineHeart />
             </Link>
           </nav>
         </div>
+
         <div className="flex w-1/6 items-center justify-center md:hidden">
           <button
             id="hamburger-button"
@@ -60,32 +115,47 @@ export const Header = () => {
           </button>
         </div>
       </section>
-      <section className="mx-auto flex max-w-4xl items-center justify-center md:p-4">
-        <nav
-          className="text xl hidden space-x-8 md:block"
-          aria-label="categories"
-        >
+
+      <section className="mx-auto hidden h-20 max-w-4xl items-center justify-center md:flex md:p-4">
+        <nav className="flex space-x-8 lg:text-xl" aria-label="categories">
           {categories.map((category) => (
-            <Link to={`/${category.name}`}>{category.name}</Link>
+            <Link
+              onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              }}
+              to={`/${category.name}`}
+            >
+              {category.name}
+            </Link>
           ))}
         </nav>
       </section>
+
       {showMenu && (
         <section
           id="mobile-menu"
-          className="top-68 absolute flex w-full origin-top animate-open-menu flex-col justify-center bg-black text-5xl"
+          className="absolute flex min-h-screen w-full origin-top animate-open-menu flex-col bg-white text-3xl text-primary dark:bg-black dark:text-white sm:text-5xl"
           onClick={() => setShowMenu((prev) => !prev)}
         >
           <nav
-            className="flex min-h-screen flex-col items-center py-8"
+            className="section-min-height flex flex-col items-center"
             aria-label="mobile"
           >
-            <Link className="w-full py-6 text-center hover:opacity-90" to="/">
+            <Link
+              onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+              }}
+              className="w-full py-4 text-center hover:bg-slate-100 hover:opacity-90 dark:hover:bg-slate-900 sm:py-6"
+              to="/"
+            >
               Home
             </Link>
             {categories.map((category) => (
               <Link
-                className="w-full py-6 text-center hover:opacity-90"
+                onClick={() => {
+                  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                }}
+                className="w-full py-4 text-center hover:bg-slate-100 hover:opacity-90 dark:hover:bg-slate-900 sm:py-6"
                 to={`/${category.name}`}
               >
                 {category.name}

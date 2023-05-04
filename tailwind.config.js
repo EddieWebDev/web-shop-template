@@ -7,6 +7,7 @@ export default {
         primary: "#c06c84",
         secondary: "#cf90a2",
         tertiary: "#eea1cd",
+        darkpink: "#ae4b67",
       },
       screens: {
         widescreen: { raw: "(min-aspect-ratio: 3/2)" },

@@ -93,7 +93,7 @@ export const ContactForm: React.FC<Props> = ({ setShowForm }) => {
           maxLength: 2000,
         })}
       ></textarea>
-      <button className="w-48 rounded-xl border border-solid border-slate-900 bg-primary p-3 text-white hover:bg-secondary active:bg-tertiary dark:border-none">
+      <button className="w-48 rounded-xl bg-primary p-3 text-white hover:bg-secondary active:bg-tertiary">
         Submit
       </button>
     </form>

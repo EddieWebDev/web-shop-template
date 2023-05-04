@@ -5,10 +5,10 @@ export const Category = () => {
 
   return (
     <section
-      id="about"
-      className="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-20 p-6"
+      id="category"
+      className="mobile-section-min-height md:section-min-height my-4 p-6 text-darkpink dark:text-white md:my-12"
     >
-      <h2 className="mb-6 text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl">
+      <h2 className="mb-6 text-center text-4xl font-bold sm:text-5xl">
         {category}
       </h2>
     </section>

@@ -7,9 +7,9 @@ export const Contact = () => {
   return (
     <section
       id="contact"
-      className="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-16 p-6"
+      className="mobile-section-min-height sm:section-min-height my-12 p-6 text-darkpink dark:text-white"
     >
-      <h2 className="mb-6 text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl">
+      <h2 className="mb-6 text-center text-4xl font-bold sm:text-5xl">
         Contact
       </h2>
       {showForm ? (
@@ -21,7 +21,7 @@ export const Contact = () => {
             possible!
           </p>
           <button
-            className="w-64 rounded-xl border border-solid border-slate-900 bg-primary p-3 text-white hover:bg-secondary active:bg-tertiary dark:border-none"
+            className="w-48 rounded-xl bg-primary p-3 text-white hover:bg-secondary active:bg-tertiary"
             onClick={() => setShowForm(true)}
           >
             Send me another message
