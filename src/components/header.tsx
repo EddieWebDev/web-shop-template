@@ -6,6 +6,9 @@ import { categories } from "../utils/dummydata";
 
 export const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [showCart, setShowCart] = useState(false);
+
+  console.log(showCart);
 
   return (
     <header className="sticky top-0 z-10 bg-primary text-white">
@@ -39,14 +42,14 @@ export const Header = () => {
             >
               <RxPerson />
             </Link>
-            <Link
+            <HiOutlineShoppingBag
+              className="hover:cursor-pointer"
               onClick={() => {
                 window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                setShowCart((prev) => !prev);
               }}
               to="/"
-            >
-              <HiOutlineShoppingBag />
-            </Link>
+            />
             <Link
               onClick={() => {
                 window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -71,7 +74,7 @@ export const Header = () => {
           </h1>
         </div>
 
-        <div className="hidden w-1/4 md:block">
+        <div className="hidden w-1/4 justify-center md:flex">
           <nav className="flex items-center justify-center gap-2 text-2xl md:gap-4">
             <Link
               onClick={() => {
@@ -81,14 +84,16 @@ export const Header = () => {
             >
               <RxPerson />
             </Link>
-            <Link
+
+            <HiOutlineShoppingBag
+              className="hover:cursor-pointer"
               onClick={() => {
                 window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                setShowCart((prev) => !prev);
               }}
               to="/"
-            >
-              <HiOutlineShoppingBag />
-            </Link>
+            />
+
             <Link
               onClick={() => {
                 window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -120,6 +125,7 @@ export const Header = () => {
         <nav className="flex space-x-8 lg:text-xl" aria-label="categories">
           {categories.map((category) => (
             <Link
+              key={category.name}
               onClick={() => {
                 window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
               }}
@@ -130,6 +136,64 @@ export const Header = () => {
           ))}
         </nav>
       </section>
+
+      {showCart && (
+        <div className="mobile-cart-height absolute right-0 flex w-full origin-top animate-open-menu flex-col rounded border-2 border-secondary bg-primary p-4 text-xl text-white sm:h-[500px] md:text-2xl xl:w-1/3">
+          <div className="flex h-full flex-col justify-between">
+            <div className="flex items-center justify-between border-b-2 border-secondary py-2">
+              <p>Cart</p>
+              <button onClick={() => setShowCart((prev) => !prev)}>x</button>
+            </div>
+            <ul className="my-4 h-full overflow-auto">
+              <li className="my-2 flex w-full justify-between pr-4">
+                <p>Item x 2:</p> <p>10$</p>
+              </li>
+              <li className="my-2 flex w-full justify-between pr-4">
+                <p>Item x 2:</p> <p>10$</p>
+              </li>
+              <li className="my-2 flex w-full justify-between pr-4">
+                <p>Item x 2:</p> <p>10$</p>
+              </li>
+              <li className="my-2 flex w-full justify-between pr-4">
+                <p>Item x 2:</p> <p>10$</p>
+              </li>
+              <li className="my-2 flex w-full justify-between pr-4">
+                <p>Item x 2:</p> <p>10$</p>
+              </li>
+              <li className="my-2 flex w-full justify-between pr-4">
+                <p>Item x 2:</p> <p>10$</p>
+              </li>
+              <li className="my-2 flex w-full justify-between pr-4">
+                <p>Item x 2:</p> <p>10$</p>
+              </li>
+              <li className="my-2 flex w-full justify-between pr-4">
+                <p>Item x 2:</p> <p>10$</p>
+              </li>
+              <li className="my-2 flex w-full justify-between pr-4">
+                <p>Item x 2:</p> <p>10$</p>
+              </li>
+              <li className="my-2 flex w-full justify-between pr-4">
+                <p>Item x 2:</p> <p>10$</p>
+              </li>
+              <li className="my-2 flex w-full justify-between pr-4">
+                <p>Item x 2:</p> <p>10$</p>
+              </li>
+              <li className="my-2 flex w-full justify-between pr-4">
+                <p>Item x 2:</p> <p>10$</p>
+              </li>
+              <li className="my-2 flex w-full justify-between pr-4">
+                <p>Item x 2:</p> <p>10$</p>
+              </li>
+              <li className="my-2 flex w-full justify-between pr-4">
+                <p>Item x 2:</p> <p>10$</p>
+              </li>
+            </ul>
+            <div className="border-t-2 border-secondary py-2">
+              <p>Total: 100$</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {showMenu && (
         <section
