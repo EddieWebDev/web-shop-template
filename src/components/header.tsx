@@ -12,8 +12,10 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-10 bg-primary text-white">
-      <section className="mx-auto flex h-20 items-center justify-between p-2 md:p-4">
-        <div className="hidden w-1/4 items-center justify-center gap-4 md:flex lg:text-xl">
+      <section className="mx-auto flex h-20 max-w-6xl items-center justify-between p-2 md:p-6">
+
+        {/* Hidden on Mobile */}
+        <div className="hidden w-1/4 items-center justify-start gap-4 md:flex md:w-1/6 lg:text-xl">
           <Link
             onClick={() => {
               window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -32,6 +34,7 @@ export const Header = () => {
           </Link>
         </div>
 
+        {/* Hidden on Desktop */}
         <div className="flex w-1/6 flex-col md:hidden">
           <nav className="flex items-center justify-center gap-1 md:gap-4">
             <Link
@@ -61,8 +64,9 @@ export const Header = () => {
           </nav>
         </div>
 
-        <div className="flex w-4/6 flex-col items-center justify-center md:w-2/4">
-          <h1 className="font-serif text-2xl font-medium md:text-4xl lg:text-5xl">
+        {/* Company name */}
+        <div className="flex w-4/6 flex-col items-center justify-center">
+          <h1 className="font-serif text-2xl font-medium md:text-5xl lg:text-5xl">
             <Link
               onClick={() => {
                 window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -74,7 +78,8 @@ export const Header = () => {
           </h1>
         </div>
 
-        <div className="hidden w-1/4 justify-center md:flex">
+        {/* Hidden on Mobile */}
+        <div className="hidden w-1/4 justify-end md:flex md:w-1/6">
           <nav className="flex items-center justify-center gap-2 text-2xl md:gap-4">
             <Link
               onClick={() => {
@@ -105,6 +110,7 @@ export const Header = () => {
           </nav>
         </div>
 
+        {/* Hidden on Desktop */}
         <div className="flex w-1/6 items-center justify-center md:hidden">
           <button
             id="hamburger-button"
@@ -121,7 +127,8 @@ export const Header = () => {
         </div>
       </section>
 
-      <section className="mx-auto hidden h-20 max-w-4xl items-center justify-center md:flex md:p-4">
+      {/* Hidden on mobile */}
+      <section className="mx-auto hidden h-20 max-w-4xl items-center justify-center md:flex p-4">
         <nav className="flex space-x-8 lg:text-xl" aria-label="categories">
           {categories.map((category) => (
             <Link
